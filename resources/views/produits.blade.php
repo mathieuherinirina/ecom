@@ -21,6 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>Page pour Tous mes produits</h1>
+        <button class="btn btn-primary">Page pour Tous mes produits</button>
     </body>
 </html>
