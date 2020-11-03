@@ -1,6 +1,6 @@
 @include('layouts.header');
 
-<div class="conteneur-cards">
+<div class="card-container">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="images/71Nq1XZzu2L._AC_SL1500_.jpg" alt="Card image cap">
         <div class="card-body">
