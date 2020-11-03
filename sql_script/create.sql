@@ -1,9 +1,10 @@
 CREATE TABLE users(
     ID_users int NOT NULL,
-    nom varchar(255) NOT NULL,
+    name varchar(255) NOT NULL,
     prenom varchar(255),
     username varchar (255) NOT NULL,
-    mdp varchar (255) NOT NULL,
+    password varchar (255) NOT NULL,
+    email varchar (255) NOT NULL,
     PRIMARY KEY (ID_users)
 );
 
@@ -24,11 +25,11 @@ CREATE TABLE carts(
 );
 CREATE TABLE produits(
     ID_prod int NOT NULL,
-    ID_cart int,
+    ID_cat int,
     nom_prod varchar(255) NOT NULL,
     prix float,
     img varchar(255) NOT NULL,
     descri varchar(255) NOT NULL,
     PRIMARY KEY (ID_prod),
-    FOREIGN KEY (ID_cart) REFERENCES carts(ID_cart)
+    FOREIGN KEY (ID_cat) REFERENCES categories(ID_cat)
 );
