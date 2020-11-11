@@ -1,5 +1,30 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+.card {
+  margin: 20px 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+}
+
+.card-title {
+  margin-bottom: .75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

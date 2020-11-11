@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Produit extends Model
 {
     protected $fillable = [
-        'ID_prod',
-        'ID_cat' ,
-        'nom_prod',
+        'id',
+        'nom',
+        'category_id' ,
+        'img_url',
         'prix',
-        'img',
-        'descri'        
+        'description'        
     ];
 
     public function category()

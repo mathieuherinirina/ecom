@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $fillable = [
-        'ID_cart',
-        'ID_users' ,
-        'ID_prod',
-        'status_payer'                    
+        'id',
+        'id_user' ,
+        'produits',
+        'status'
     ];
 
     public function user()

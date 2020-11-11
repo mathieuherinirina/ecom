@@ -1,6 +1,6 @@
 CREATE TABLE users(
-    ID_users int NOT NULL,
-    name varchar(255) NOT NULL,
+    id int NOT NULL,
+    nom varchar(255) NOT NULL,
     prenom varchar(255),
     username varchar (255) NOT NULL,
     password varchar (255) NOT NULL,
@@ -23,6 +23,7 @@ CREATE TABLE carts(
     FOREIGN KEY (ID_prod) REFERENCES produits(ID_prod),
     FOREIGN KEY (ID_users) REFERENCES users(ID_users)
 );
+
 CREATE TABLE produits(
     ID_prod int NOT NULL,
     ID_cat int,

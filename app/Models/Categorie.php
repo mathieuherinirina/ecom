@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Categorie extends Model
 {
     protected $fillable = [
-        'ID_cat', 'nom_cat'        
+        'id',
+        'nom'
     ];
 
 }
