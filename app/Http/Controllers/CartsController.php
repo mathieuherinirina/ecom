@@ -42,7 +42,6 @@ class CartController extends Controller
             'id_user' => 'required',
             'id_prod' => 'required',
             'status' => 'required',
-          ,
         ]);
 
         $input = $request->all();
