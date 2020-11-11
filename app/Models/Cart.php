@@ -7,21 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
-        'id',
+        'id_cart',
         'id_user' ,
-        'produits',
+        'id_prod',
         'status'
     ];
-
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
-
-    public function produit()
-    {
-        return $this->belongsTo('App\Models\Produit');
-    }
-
 }

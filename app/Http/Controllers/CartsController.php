@@ -14,7 +14,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $carts = Cart::all();
+        return view('carts.index', compact('carts','carts'));
+
     }
 
     /**
@@ -24,7 +26,8 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return view('carts.create');
+
     }
 
     /**
@@ -35,7 +38,18 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'id_user' => 'required',
+            'id_prod' => 'required',
+            'status' => 'required',
+          ,
+        ]);
+
+        $input = $request->all();
+
+        cart::create($input);
+
+        return redirect()->route('carts.index');
     }
 
     /**
@@ -46,7 +60,9 @@ class CartController extends Controller
      */
     public function show(Cart $Cart)
     {
-        //
+        $cart = Cart::findOrFail($id);
+        return view('carts.show', compact('cart','cart'));
+ 
     }
 
     /**
@@ -57,7 +73,9 @@ class CartController extends Controller
      */
     public function edit(Cart $Cart)
     {
-        //
+        $cart = Cart::findOrFail($id);
+        return view('carts.show', compact('cart','cart'));
+ 
     }
 
     /**
@@ -69,7 +87,19 @@ class CartController extends Controller
      */
     public function update(Request $request, Cart $Cart)
     {
-        //
+        $cart = Cart::findOrFail($id);
+
+        $this->validate($request, [
+            'Id_user' => 'required',
+            'Id_prod' => 'required',
+            'status' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $cart->fill($input)->save();
+
+        return redirect()->route('carts.index');
     }
 
     /**
@@ -80,6 +110,10 @@ class CartController extends Controller
      */
     public function destroy(Cart $Cart)
     {
-        //
+        $cart = Cart::findOrFail($id);
+
+        $cart->delete();
+        
+        return redirect()->route('carts.index');
     }
 }

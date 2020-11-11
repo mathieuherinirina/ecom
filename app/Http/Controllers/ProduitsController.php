@@ -14,7 +14,8 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        //
+        $produits = Produit::all();
+        return view('produits.index', compact('produits','produits'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        //
+        return view('produits.create');
+
     }
 
     /**
@@ -35,7 +37,19 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nom_prod' => 'required',
+            'id_categorie' => 'required',
+            'img_url' => 'required',
+            'prix' => 'required|numeric',
+            'description' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        produit::create($input);
+
+        return redirect()->route('produits.index');
     }
 
     /**
@@ -46,7 +60,8 @@ class ProduitController extends Controller
      */
     public function show(Produit $Produit)
     {
-        //
+        $produit = Produit::findOrFail($id);
+        return view('produits.show', compact('produit','produit'));
     }
 
     /**
@@ -57,7 +72,9 @@ class ProduitController extends Controller
      */
     public function edit(Produit $Produit)
     {
-        //
+        $produit = Produit::find($id);
+        
+        return view('produits.edit', compact('produit','produit'));
     }
 
     /**
@@ -69,7 +86,21 @@ class ProduitController extends Controller
      */
     public function update(Request $request, Produit $Produit)
     {
-        //
+        $produit = Produit::findOrFail($id);
+
+        $this->validate($request, [
+            'nom_prod' => 'required',
+            'id_categorie' => 'required',
+            'img_url' => 'required',
+            'prix' => 'required|numeric',
+            'description' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $produit->fill($input)->save();
+
+        return redirect()->route('produits.index'); 
     }
 
     /**
@@ -80,6 +111,10 @@ class ProduitController extends Controller
      */
     public function destroy(Produit $Produit)
     {
-        //
+        $produit = Produit::findOrFail($id);
+
+        $produit->delete();
+        
+        return redirect()->route('produits.index');
     }
 }

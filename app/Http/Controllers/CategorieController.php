@@ -14,7 +14,8 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Categorie::all();
+        return view('categories.index', compact('categories','categories'));  
     }
 
     /**
@@ -24,7 +25,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request, [
+            'nom_categorie' => 'required',
+
+        ]);
+
+        $input = $request->all();
+
+        categorie::create($input);
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -46,7 +57,8 @@ class CategorieController extends Controller
      */
     public function show(Categorie $Categorie)
     {
-        //
+        $categorie = Categorie::findOrFail($id);
+        return view('categories.show', compact('categorie','categorie'));
     }
 
     /**
@@ -57,7 +69,9 @@ class CategorieController extends Controller
      */
     public function edit(Categorie $Categorie)
     {
-        //
+        $categorie = Categorie::find($id);
+
+        return view('categories.edit', compact('categorie','categorie'));
     }
 
     /**
@@ -69,7 +83,18 @@ class CategorieController extends Controller
      */
     public function update(Request $request, Categorie $Categorie)
     {
-        //
+        $categorie = Categorie::findOrFail($id);
+
+        $this->validate($request, [
+            'nom_categorie' => 'required',
+            
+        ]);
+
+        $input = $request->all();
+
+        $categorie->fill($input)->save();
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -80,6 +105,10 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $Categorie)
     {
-        //
+        $categorie = Categorie::findOrFail($id);
+
+        $categorie->delete();
+        
+        return redirect()->route('categories.index');
     }
 }
