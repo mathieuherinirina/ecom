@@ -22,7 +22,7 @@
                 Appareil photo: Triple, 12MP + 64MP + 12MP
                 Batterie: 4000 mAh
                 OS: Android 10</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Ajouter à cart</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -42,7 +42,7 @@
                 Empreinte Digital :Biométrie Scanner d’empreinte ultrasonique sous l'écran
                 Garantie Officielle:1 an.
                 Avec écouteur Samsung (Buds+) Offert Gratuitement.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Ajouter à cart</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -60,7 +60,7 @@
                 comme des coqs en pâtes avec du 144 Hz, certes, mais pertinente pour ceux qui cherchent à toucher du
                 doigt
                 le summum de la fluidité en jeu.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Ajouter à cart</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -74,7 +74,7 @@
                 qui n'évoque pas au premier regard le monde du Gaming, il conviendra notamment aux étudiants en quête
                 d'une
                 machine discrète, facile à emmener en cours et se montrant à l'aise pour du jeu occasionnel.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Ajouter à cart</a>
         </div>
     </div>
 </div>
