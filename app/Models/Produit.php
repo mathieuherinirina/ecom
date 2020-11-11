@@ -9,7 +9,7 @@ class Produit extends Model
 {
     protected $fillable = [
         'id',
-        'nom',
+        'nomprod',
         'category_id' ,
         'img_url',
         'prix',

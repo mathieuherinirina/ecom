@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index', compact('users','users'));
     }
 
     /**
@@ -24,7 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('users.create');
     }
 
     /**
@@ -35,7 +37,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required|email',
+            'role' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        User::create($input);
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -46,7 +61,8 @@ class UserController extends Controller
      */
     public function show(User $User)
     {
-        //
+        $user = user::findOrFail($id);
+        return view('users.show', compact('user','user'));
     }
 
     /**
@@ -57,7 +73,9 @@ class UserController extends Controller
      */
     public function edit(User $User)
     {
-        //
+        $user = user::find($id);
+        
+        return view('users.edit', compact('user','user'));
     }
 
     /**
@@ -69,7 +87,22 @@ class UserController extends Controller
      */
     public function update(Request $request, User $User)
     {
-        //
+        $user = user::findOrFail($id);
+
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required|email',
+            'role' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $user->fill($input)->save();
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -80,6 +113,10 @@ class UserController extends Controller
      */
     public function destroy(User $User)
     {
-        //
+        $user = user::findOrFail($id);
+
+        $user->delete();
+        
+        return redirect()->route('users.index');
     }
 }

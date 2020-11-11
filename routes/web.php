@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/produits', function () {
     return view('produits');
 });
+Route::resource('users', 'UserController');
