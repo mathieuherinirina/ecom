@@ -19344,12 +19344,10 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $(document).ready(function () {
-  alert("ready!");
-});
-$('#ddlCategorie .dropdown-item').on('click', function (e) {
-  // $('.txtCategory').val($(this).attr('data-id'));
-  e.preventDefault();
-  alert($(this).attr('data-id'));
+  $('.choose-category').click(function () {
+    $('input[name=produit_categorie_id]').val($(this).attr('data-id'));
+    $('#ddlCat').text($(this).text());
+  });
 });
 
 /***/ }),

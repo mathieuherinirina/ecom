@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CartController;
@@ -17,9 +18,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+// Route::get('/', function () {
+//     return view('homepage');
+// });
+
+Route::resource('home', HomeController::class)->names(['home' => 'home.allProducts']);
 
 // route users
 Route::resource('users', UserController::class)->names(['users' => 'users.index']);
