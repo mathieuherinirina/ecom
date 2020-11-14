@@ -19343,6 +19343,15 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$(document).ready(function () {
+  alert("ready!");
+});
+$('#ddlCategorie .dropdown-item').on('click', function (e) {
+  // $('.txtCategory').val($(this).attr('data-id'));
+  e.preventDefault();
+  alert($(this).attr('data-id'));
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

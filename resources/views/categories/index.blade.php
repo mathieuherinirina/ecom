@@ -10,12 +10,14 @@
 
     <table class="table">
         <thead>
+        <th>Categorie ID</th>
         <th>Nom Categorie</th>
         <th colspan="3">Actions</th>
         </thead>
 
         @foreach($categories as $categorie)
             <tr>
+                <td>{{$categorie->id}}</td>
                 <td>{{$categorie->categorie_nom}}</td>
                 
                 <td>

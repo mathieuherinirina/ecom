@@ -8,6 +8,8 @@
 
     <hr/>
 
+  <div class="section-produit-create">
+  
   <form action="/ecom/public/produits" method="POST" >
     <div class="form-group">
       <label for="produit_nom">
@@ -18,9 +20,22 @@
 
     <div class="form-group">
       <label for="produit_categorie_id">
-        Categorie id
+        <button class="nav-link dropdown-toggle" id="ddlCategorie" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          @foreach($categoriesList as $category)
+            <button class="dropdown-item" data-id={{ $category->id }}>
+              {{ $category->categorie_nom }}
+            </button>
+            <div class="dropdown-divider"></div>
+          @endforeach
+
+      </div>
+  
       </label>
-      <input type="text" name="produit_categorie_id" class="form-control">
+      <input type="text" name="produit_categorie_id" class="form-control txtCategory">
     </div>
 
     <div class="form-group">
@@ -49,4 +64,6 @@
     <!-- build the submission button -->
     <input type="submit" value="Créer">
   </form>
+
+  </div>
 @endsection
