@@ -59,10 +59,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function show(User $User)
+    public function show($id)
     {
-        $user = user::findOrFail($id);
-        return view('users.show', compact('user','user'));
+      $user = user::findOrFail($id);
+      return view('users.show', compact('user','user'));
     }
 
     /**

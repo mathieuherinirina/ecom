@@ -9,7 +9,7 @@
 
     <dl>
         <dt>Nom</dt>
-        <dd>{{$user->Nom}}</dd>
+        <dd>{{$user->nom}}</dd>
 
         <dt>Prenom</dt>
         <dd>{{$user->prenom}}</dd>
@@ -29,7 +29,7 @@
     </dl>
 
     <div class="d-flex">
-        <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary m-1">Edit</a>
+        <a href="{{route('users.edit', $user)}}" class="btn btn-primary m-1">Edit</a>
 
         <form action="{{ route('users.destroy', $user->id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">

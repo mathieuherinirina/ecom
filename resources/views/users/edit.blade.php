@@ -18,6 +18,9 @@
         </div>
     @endif
 
+    <form action="/users" method="put">
+    
+    </form>
     <!-- Open the form with the store function route. -->
     {{ Form::open(['action' => ['UserController@update', $user->id], 'method' => 'put']) }}
     <!-- Include the CRSF token -->

@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CartController;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,6 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-// Route::get('/users', function () {
-//   return view('users/index');
-// });
 
 Route::resource('users', UserController::class)->names(['users' => 'users.index']);
 Route::resource('users', UserController::class)->names(['users' => 'users.store']);
@@ -31,6 +29,23 @@ Route::resource('users', UserController::class)->names(['users' => 'users.show']
 Route::resource('users', UserController::class)->names(['users' => 'users.update']);
 Route::resource('users', UserController::class)->names(['users' => 'users.destroy']);
 Route::resource('users', UserController::class)->names(['users' => 'users.edit']);
+
+// Route::get('users', [UserController::class, 'index']);
+// Route::post('users', [UserController::class, 'store']);
+// Route::get('users/create', [UserController::class, 'create']);
+// Route::get('users/{id}', [UserController::class, 'show']);
+// Route::put('users/{id}', [UserController::class, 'update']);
+// Route::delete('users/{id}', [UserController::class, 'destroy']);
+// Route::get('users/{id}/edit', [UserController::class, 'edit']);
+
+// Route::resource('users', UserController::class)->names(['users' => 'users.index']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.store']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.create']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.show']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.update']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.destroy']);
+// Route::resource('users', UserController::class)->names(['users' => 'users.edit']);
+
 
 // route produits
 
