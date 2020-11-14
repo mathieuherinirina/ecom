@@ -9,9 +9,9 @@ class Cart extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'id_cart',
-        'id_user' ,
-        'id_prod',
-        'status'
+        'cart_id',
+        'cart_user_id' ,
+        'cart_produit_id',
+        'cart_status'
     ];
 }

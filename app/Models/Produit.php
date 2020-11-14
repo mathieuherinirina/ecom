@@ -9,12 +9,12 @@ class Produit extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'id_prod',
-        'nom_prod',
-        'id_categorie' ,
-        'img_url',
-        'prix',
-        'description'        
+        'produit_id',
+        'produit_nom',
+        'produit_categorie_id' ,
+        'produit_img_url',
+        'produit_prix',
+        'produit_description'        
     ];
 
     public function category()
