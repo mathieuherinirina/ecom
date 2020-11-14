@@ -84,9 +84,9 @@ class ProduitController extends Controller
      * @param  \App\Models\Produit  $Produit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $produit = Produit::findOrFail($id);
+        $produit = Produit::findOrFail($request["id"]);
 
         $this->validate($request, [
             'produit_nom' => 'required',

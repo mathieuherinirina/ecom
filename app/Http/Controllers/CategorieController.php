@@ -55,7 +55,7 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $Categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $Categorie)
+    public function show($id)
     {
         $categorie = Categorie::findOrFail($id);
         return view('categories.show', compact('categorie','categorie'));
@@ -67,7 +67,7 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $Categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $Categorie)
+    public function edit($id)
     {
         $categorie = Categorie::find($id);
 
@@ -81,9 +81,9 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $Categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $Categorie)
+    public function update(Request $request)
     {
-        $categorie = Categorie::findOrFail($id);
+        $categorie = Categorie::findOrFail($request["id"]);
 
         $this->validate($request, [
             'categorie_nom' => 'required',
@@ -103,7 +103,7 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $Categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $Categorie)
+    public function destroy($id)
     {
         $categorie = Categorie::findOrFail($id);
 

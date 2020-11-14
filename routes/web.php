@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProduitsController;
+use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CartController;
 use Illuminate\Http\Request;
@@ -32,13 +32,13 @@ Route::resource('users', UserController::class)->names(['users' => 'users.edit']
 
 // route produits
 
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.index']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.store']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.create']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.show']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.update']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.destroy']);
-Route::resource('produits', ProduitsController::class)->names(['produits' => 'produits.edit']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.index']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.store']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.create']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.show']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.update']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.destroy']);
+Route::resource('produits', ProduitController::class)->names(['produits' => 'produits.edit']);
 
 // //route categories
 
@@ -52,13 +52,13 @@ Route::resource('categories', CategorieController::class)->names(['categories' =
 
 // //route carts
 
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.index']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.store']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.create']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.show']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.update']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.destroy']);
-Route::resource('carts', CartsController::class)->names(['carts' => 'carts.edit']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.index']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.store']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.create']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.show']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.update']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.destroy']);
+Route::resource('carts', CartController::class)->names(['carts' => 'carts.edit']);
 
 
 
