@@ -38,7 +38,7 @@ class CategorieController extends Controller
     {
         
         $this->validate($request, [
-            'nom_categorie' => 'required',
+            'categorie_nom' => 'required',
 
         ]);
 
@@ -86,7 +86,7 @@ class CategorieController extends Controller
         $categorie = Categorie::findOrFail($id);
 
         $this->validate($request, [
-            'nom_categorie' => 'required',
+            'categorie_nom' => 'required',
             
         ]);
 

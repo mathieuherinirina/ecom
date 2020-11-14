@@ -38,11 +38,11 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nom_prod' => 'required',
-            'id_categorie' => 'required',
-            'img_url' => 'required',
-            'prix' => 'required|numeric',
-            'description' => 'required',
+            'produit_nom' => 'required',
+            'produit_categorie_id' => 'required',
+            'produit_img_url' => 'required',
+            'produit_prix' => 'required|numeric',
+            'produit_description' => 'required',
         ]);
 
         $input = $request->all();
@@ -58,7 +58,7 @@ class ProduitController extends Controller
      * @param  \App\Models\Produit  $Produit
      * @return \Illuminate\Http\Response
      */
-    public function show(Produit $Produit)
+    public function show($id)
     {
         $produit = Produit::findOrFail($id);
         return view('produits.show', compact('produit','produit'));
@@ -70,7 +70,7 @@ class ProduitController extends Controller
      * @param  \App\Models\Produit  $Produit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produit $Produit)
+    public function edit($id)
     {
         $produit = Produit::find($id);
         
@@ -84,16 +84,16 @@ class ProduitController extends Controller
      * @param  \App\Models\Produit  $Produit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produit $Produit)
+    public function update(Request $request, $id)
     {
         $produit = Produit::findOrFail($id);
 
         $this->validate($request, [
-            'nom_prod' => 'required',
-            'id_categorie' => 'required',
-            'img_url' => 'required',
-            'prix' => 'required|numeric',
-            'description' => 'required',
+            'produit_nom' => 'required',
+            'produit_categorie_id' => 'required',
+            'produit_img_url' => 'required',
+            'produit_prix' => 'required|numeric',
+            'produit_description' => 'required',
         ]);
 
         $input = $request->all();
@@ -109,7 +109,7 @@ class ProduitController extends Controller
      * @param  \App\Models\Produit  $Produit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produit $Produit)
+    public function destroy($id)
     {
         $produit = Produit::findOrFail($id);
 

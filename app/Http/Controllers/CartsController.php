@@ -39,9 +39,9 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_user' => 'required',
-            'id_prod' => 'required',
-            'status' => 'required',
+            'cart_user_id' => 'required',
+            'cart_produit_id' => 'required',
+            'cart_status' => 'required',
         ]);
 
         $input = $request->all();
@@ -57,7 +57,7 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $Cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $Cart)
+    public function show($id)
     {
         $cart = Cart::findOrFail($id);
         return view('carts.show', compact('cart','cart'));
@@ -70,7 +70,7 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $Cart
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cart $Cart)
+    public function edit($id)
     {
         $cart = Cart::findOrFail($id);
         return view('carts.show', compact('cart','cart'));
@@ -84,14 +84,14 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $Cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $Cart)
+    public function update(Request $request, $id)
     {
         $cart = Cart::findOrFail($id);
 
         $this->validate($request, [
-            'Id_user' => 'required',
-            'Id_prod' => 'required',
-            'status' => 'required',
+            'cart_user_id' => 'required',
+            'cart_produit_id' => 'required',
+            'cart_status' => 'required',
         ]);
 
         $input = $request->all();
@@ -107,7 +107,7 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $Cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $Cart)
+    public function destroy($id)
     {
         $cart = Cart::findOrFail($id);
 
