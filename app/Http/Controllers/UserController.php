@@ -71,7 +71,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $User)
+    public function edit($id)
     {
         $user = user::find($id);
         
@@ -85,9 +85,9 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $User)
+    public function update(Request $request)
     {
-        $user = user::findOrFail($id);
+        $user = user::findOrFail($request["id"]);
 
         $this->validate($request, [
             'nom' => 'required',
@@ -111,7 +111,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $User)
+    public function destroy($id)
     {
         $user = user::findOrFail($id);
 

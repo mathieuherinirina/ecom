@@ -32,9 +32,10 @@
                         <a href="{{route('users.show', $user->id)}}" class="btn btn-info m-1">Details</a>
                         <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary m-1">Edit</a>
 
+                        @method('DELETE')
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="id" value="{{ $user->id}}">
                             <button class="btn btn-danger m-1">Delete User</button>
                         </form>
                     </div>
