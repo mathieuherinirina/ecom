@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('pageTitle', 'Create A Cart')
 
 @section('content')
@@ -7,42 +8,29 @@
 
     <hr/>
 
-    <!-- if validation in the controller fails, show the errors -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <!-- Open the form with the store function route. -->
-    {{ Form::open(['action' => 'CartController@store']) }}
-
-    <!-- Include the CRSF token -->
-    {{Form::token()}}
-
-    
-    <!-- build our form inputs -->
+  <form action="/ecom/public/carts" method="POST" >
     <div class="form-group">
-        {{Form::label('Id_user', 'Id_user')}}
-        {{Form::number('Id_user', '', ['class' => 'form-control'])}}
+      <label for="cart_user_id">
+        User ID
+      </label>
+      <input type="number" name="cart_user_id" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('Id_prod', 'Id_prod')}}
-        {{Form::number('Id_prod', '', ['class' => 'form-control'])}}
+      <label for="cart_produit_id">
+        Produit ID
+      </label>
+      <input type="number" name="cart_produit_id" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('status', 'status')}}
-        {{Form::text('status', '', ['class' => 'form-control'])}}
+      <label for="cart_status">
+        Status (0 pour impayé ,  1 pour déjà payé)
+      </label>
+      <input type="number" name="cart_status" class="form-control">
     </div>
 
     <!-- build the submission button -->
-    {{Form::submit('Create!', ['class' => 'btn btn-primary'])}}
-    {{ Form::close() }}
-
+    <input type="submit" value="Créer Panier">
+  </form>
 @endsection

@@ -10,17 +10,17 @@
 
     <table class="table">
         <thead>
-        <th>Id_user</th>
-        <th>id_prod</th>
-        <th>status</th>
+        <th>User ID</th>
+        <th>Produit ID</th>
+        <th>Status paiement</th>
         <th colspan="3">Actions</th>
         </thead>
 
         @foreach($carts as $cart)
             <tr>
-                <td>{{$cart->id_user}}</td>
-                <td>{{$cart->id_prod}}</td>
-                <td>{{$cart->status}}</td>
+                <td>{{$cart->cart_user_id}}</td>
+                <td>{{$cart->cart_produit_id}}</td>
+                <td>{{$cart->cart_status}}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{route('carts.show', $cart->id)}}" class="btn btn-info m-1">Details</a>

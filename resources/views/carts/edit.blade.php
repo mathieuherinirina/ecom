@@ -1,44 +1,39 @@
 @extends('layouts.master')
 
-@section('pageTitle', 'Edit Carts Details')
+@section('pageTitle', 'Edit Cart Details')
 
 @section('content')
 
     <h1 class="display-6">Edit Cart</h1>
 
     <hr/>
-    <!-- if validation in the controller fails, show the errors -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <!-- Open the form with the store function route. -->
-    {{ Form::open(['action' => ['cartController@update', $cart->id], 'method' => 'put']) }}
-    <!-- Include the CRSF token -->
-    {{Form::token()}}
-    <!-- build our form inputs -->
-    <div class="form-group">
-        {{Form::label('id_user', 'id_user')}}
-        {{Form::number('id_user', $cart->id_user, ['class' => 'form-control'])}}
-    </div>
+    <form action="/ecom/public/carts/{{$cart->id}}" method="POST" >
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="id" value="{{ $cart->id}}">
+      <div class="form-group">
+        <label for="cart_user_id">
+          User ID
+        </label>
+        <input type="text" name="cart_user_id" class="form-control" value="{{$cart->cart_user_id}}">
+      </div>
 
-    <div class="form-group">
-        {{Form::label('id_prod', 'id_prod')}}
-        {{Form::number('id_prod', $cart->id_prod, ['class' => 'form-control'])}}
-    </div>
+      <div class="form-group">
+        <label for="cart_produit_id">
+          Produit ID
+        </label>
+        <input type="text" name="cart_produit_id" class="form-control" value="{{$cart->cart_produit_id}}">
+      </div>
 
-    <div class="form-group">
-        {{Form::label('statusl', 'statusl')}}
-        {{Form::text('statusl', $cart->statusl, ['class' => 'form-control'])}}
-    </div>
+      <div class="form-group">
+        <label for="cart_status">
+          Status
+        </label>
+        <input type="text" name="cart_status" class="form-control" value="{{$cart->cart_status}}">
+      </div>
 
-    {{Form::submit('Update!', ['class' => 'btn btn-primary'])}}
-    {{ Form::close() }}
-    
+      @method('PUT')
+      <input type="submit" value="Modifier">
+    </form>
+      
 @endsection

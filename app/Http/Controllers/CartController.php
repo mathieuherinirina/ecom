@@ -46,7 +46,7 @@ class CartController extends Controller
 
         $input = $request->all();
 
-        cart::create($input);
+        Cart::create($input);
 
         return redirect()->route('carts.index');
     }
@@ -72,8 +72,8 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        $cart = Cart::findOrFail($id);
-        return view('carts.show', compact('cart','cart'));
+        $cart = Cart::find($id);
+        return view('carts.edit', compact('cart','cart'));
  
     }
 
@@ -84,9 +84,9 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $Cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $cart = Cart::findOrFail($id);
+        $cart = Cart::findOrFail($request["id"]);
 
         $this->validate($request, [
             'cart_user_id' => 'required',

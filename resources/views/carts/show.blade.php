@@ -9,18 +9,18 @@
 
     <dl>
         <dt>id_user</dt>
-        <dd>{{$cart->id_user}}</dd>
+        <dd>{{$cart->cart_user_id}}</dd>
 
         <dt>id_prod</dt>
-        <dd>{{$cart->id_prod}}</dd>
+        <dd>{{$cart->cart_produit_id}}</dd>
 
         <dt>status</dt>
-        <dd>{{$cart->status}}</dd>
+        <dd>{{$cart->cart_status}}</dd>
 
     </dl>
 
     <div class="d-flex">
-        <a href="{{route('carts.edit', $cart->id)}}" class="btn btn-primary m-1">Edit</a>
+        <a href="{{route('carts.edit', $cart)}}" class="btn btn-primary m-1">Edit</a>
 
         <form action="{{ route('carts.destroy', $cart->id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
