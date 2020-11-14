@@ -8,18 +8,7 @@
 
     <hr/>
 
-    <!-- if validation in the controller fails, show the errors -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-  <form method="post" action="/users">
+  <form action="/ecom/public/users" method="POST" >
     <div class="form-group">
       <label for="nom">
         Nom

@@ -21,7 +21,6 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-
 Route::resource('users', UserController::class)->names(['users' => 'users.index']);
 Route::resource('users', UserController::class)->names(['users' => 'users.store']);
 Route::resource('users', UserController::class)->names(['users' => 'users.create']);

@@ -7,58 +7,54 @@
     <h1 class="display-6">Edit User</h1>
 
     <hr/>
-    <!-- if validation in the controller fails, show the errors -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <form action="/users" method="put">
-    
+    <form action="/ecom/public/users/{{$user->id}}" method="POST" >
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="id" value="{{ $user->id}}">
+      <div class="form-group">
+        <label for="nom">
+          Nom
+        </label>
+        <input type="text" name="nom" class="form-control" value="{{$user->nom}}">
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">
+          Prenom
+        </label>
+        <input type="text" name="prenom" class="form-control" value="{{$user->prenom}}">
+      </div>
+
+      <div class="form-group">
+        <label for="username">
+          Username
+        </label>
+        <input type="text" name="username" class="form-control" value="{{$user->username}}">
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          Mot de Passe
+        </label>
+        <input type="password" name="password" class="form-control" value="{{$user->password}}">
+      </div>
+
+      <div class="form-group">
+        <label for="email">
+            Email
+        </label>
+        <input type="email" name="email" class="form-control" value="{{$user->email}}">
+      </div>
+
+      <div class="form-group">
+        <label for="role">
+          Role
+        </label>
+        <input type="role" name="role" class="form-control" value="{{$user->role}}">
+      </div>
+
+      @method('PUT')
+      <input type="submit" value="Modifier">
     </form>
-    <!-- Open the form with the store function route. -->
-    {{ Form::open(['action' => ['UserController@update', $user->id], 'method' => 'put']) }}
-    <!-- Include the CRSF token -->
-    {{Form::token()}}
-    <!-- build our form inputs -->
-    <div class="form-group">
-        {{Form::label('nom', 'Nom')}}
-        {{Form::text('nom', $user->nom, ['class' => 'form-control'])}}
-    </div>
-
-    <div class="form-group">
-        {{Form::label('prenom', 'Prenom')}}
-        {{Form::text('prenom', $user->prenom, ['class' => 'form-control'])}}
-    </div>
-
-    <div class="form-group">
-        {{Form::label('username', 'Username')}}
-        {{Form::number('username', $user->username, ['class' => 'form-control'])}}
-    </div>
-
-    <div class="form-group">
-        {{Form::label('password', 'Password')}}
-        {{Form::text('password', $user->password, ['class' => 'form-control'])}}
-    </div>
-
-
-    <div class="form-group">
-        {{Form::label('email', 'E-Mail Address')}}
-        {{Form::text('email', $user->email, ['class' => 'form-control'])}}
-    </div>
-
-    <div class="form-group">
-        {{Form::label('role', 'Role')}}
-        {{Form::text('role', $user->role, ['class' => 'form-control'])}}
-    </div>
-
-
-    {{Form::submit('Update!', ['class' => 'btn btn-primary'])}}
-    {{ Form::close() }}
-    
+      
 @endsection
