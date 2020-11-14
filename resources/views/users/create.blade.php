@@ -19,46 +19,50 @@
         </div>
     @endif
 
-    <!-- Open the form with the store function route. -->
-    {{ Form::open(['action' => 'userController@store']) }}
-
-    <!-- Include the CRSF token -->
-    {{Form::token()}}
-
-    
-    <!-- build our form inputs -->
+  <form method="post" action="/users">
     <div class="form-group">
-        {{Form::label('nom', 'Nom')}}
-        {{Form::text('nom', '', ['class' => 'form-control'])}}
+      <label for="nom">
+        Nom
+      </label>
+      <input type="text" name="nom" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('prenom', 'Prenom')}}
-        {{Form::text('prenom', '', ['class' => 'form-control'])}}
+      <label for="prenom">
+        Prenom
+      </label>
+      <input type="text" name="prenom" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('username', 'Username')}}
-        {{Form::text('username', '', ['class' => 'form-control'])}}
+      <label for="username">
+        Username
+      </label>
+      <input type="text" name="username" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('password', 'Password')}}
-        {{Form::text('passeword', '', ['class' => 'form-control'])}}
+      <label for="password">
+        Mot de passe
+      </label>
+      <input type="password" name="password" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('email', 'E-Mail Address')}}
-        {{Form::text('email', '', ['class' => 'form-control'])}}
+      <label for="email">
+        Email
+      </label>
+      <input type="email" name="email" class="form-control">
     </div>
 
     <div class="form-group">
-        {{Form::label('role', 'Role')}}
-        {{Form::text('role', '', ['class' => 'form-control'])}}
+      <label for="role">
+        Role
+      </label>
+      <input type="role" name="role" class="form-control">
     </div>
 
     <!-- build the submission button -->
-    {{Form::submit('Create!', ['class' => 'btn btn-primary'])}}
-    {{ Form::close() }}
-
+    <input type="submit" value="Créer">
+  </form>
 @endsection
