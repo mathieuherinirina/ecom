@@ -20,11 +20,11 @@
 
         @foreach($produits as $produit)
             <tr>
-                <td>{{$produit->nom_produit}}</td>
-                <td>{{$produit->id_categorie}}</td>
-                <td>{{$produit->img_url}}</td>
-                <td>{{$produit->prix}}</td>
-                <td>{{$produit->description}}</td>
+                <td>{{$produit->produit_nom}}</td>
+                <td>{{$produit->produit_categorie_id}}</td>
+                <td>{{$produit->produit_img_url}}</td>
+                <td>{{$produit->produit_prix}}</td>
+                <td>{{$produit->produit_description}}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{route('produits.show', $produit->id)}}" class="btn btn-info m-1">Details</a>

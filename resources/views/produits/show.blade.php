@@ -9,19 +9,19 @@
 
     <dl>
         <dt>Nom_produit</dt>
-        <dd>{{$produit->nom_produit}}</dd>
+        <dd>{{$produit->produit_nom}}</dd>
 
         <dt>categorie_id</dt>
-        <dd>{{$produit->categorie_id}}</dd>
+        <dd>{{$produit->produit_categorie_id}}</dd>
 
         <dt>Img_url</dt>
-        <dd>{{$produit->img_url}}</dd>
+        <dd>{{$produit->produit_img_url}}</dd>
 
         <dt>Prix</dt>
-        <dd>{{$produit->prix}}</dd>
+        <dd>{{$produit->produit_prix}}</dd>
 
         <dt>Description</dt>
-        <dd>{{$produit->description}}</dd>
+        <dd>{{$produit->produit_description}}</dd>
     </dl>
 
     <div class="d-flex">
