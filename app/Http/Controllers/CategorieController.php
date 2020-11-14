@@ -44,7 +44,7 @@ class CategorieController extends Controller
 
         $input = $request->all();
 
-        categorie::create($input);
+        Categorie::create($input);
 
         return redirect()->route('categories.index');
     }

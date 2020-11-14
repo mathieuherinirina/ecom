@@ -8,17 +8,17 @@
     <hr/>
 
     <dl>
-        <dt>Nom_categorie</dt>
-        <dd>{{$categorie->nom_categorie}}</dd>
+        <dt>Categorie Nom</dt>
+        <dd>{{$categorie->categorie_nom}}</dd>
     </dl>
 
     <div class="d-flex">
-        <a href="{{route('categories.edit', $categorie->id)}}" class="btn btn-primary m-1">Edit</a>
+        <a href="{{route('categories.edit', $categorie)}}" class="btn btn-primary m-1">Edit</a>
 
         <form action="{{ route('categories.destroy', $categorie->id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button class="btn btn-danger m-1">Delete User</button>
+            <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+            <button class="btn btn-danger m-1">Delete Categorie</button>
         </form>
     </div>
 @endsection

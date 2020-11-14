@@ -33,7 +33,7 @@
                         <form action="{{ route('produits.destroy', $produit->id) }}" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <button class="btn btn-danger m-1">Delete User</button>
+                            <button class="btn btn-danger m-1">Delete Produit</button>
                         </form>
                     </div>
 

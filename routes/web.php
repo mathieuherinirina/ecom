@@ -42,13 +42,13 @@ Route::resource('produits', ProduitController::class)->names(['produits' => 'pro
 
 // //route categories
 
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.index']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.store']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.create']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.show']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.update']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.destroy']);
-Route::resource('categories', CategorieController::class)->names(['categories' => 'categorie.edit']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.index']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.store']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.create']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.show']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.update']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.destroy']);
+Route::resource('categories', CategorieController::class)->names(['categories' => 'categories.edit']);
 
 // //route carts
 

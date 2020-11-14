@@ -4,16 +4,16 @@
 @section('pageTitle', 'Create A produit')
 
 @section('content')
-    <h1 class="display-6">Create New Produits</h1>
+    <h1 class="display-6">Create New Produit</h1>
 
     <hr/>
 
   <form action="/ecom/public/produits" method="POST" >
     <div class="form-group">
-      <label for="produits_nom">
+      <label for="produit_nom">
         Nom du produit
       </label>
-      <input type="text" name="produits_nom" class="form-control">
+      <input type="text" name="produit_nom" class="form-control">
     </div>
 
     <div class="form-group">
@@ -22,10 +22,10 @@
       </label>
       <input type="text" name="produit_categorie_id" class="form-control">
     </div>
-a
+
     <div class="form-group">
       <label for="produit_img_url">
-        Image_url
+        Url de l'image 
       </label>
       <input type="text" name="produit_img_url" class="form-control">
     </div>

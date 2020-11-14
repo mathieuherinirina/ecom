@@ -47,7 +47,7 @@ class ProduitController extends Controller
 
         $input = $request->all();
 
-        produit::create($input);
+        Produit::create($input);
 
         return redirect()->route('produits.index');
     }
